@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="1080,608" roundcorner="0,0" sizebox="4,4,6,6" caption="0,0,0,90" mininfo="1080,608">
+	<HorizontalLayout >
+		<VerticalLayout>
+			<HorizontalLayout>
+			</HorizontalLayout>
+				
+			<HorizontalLayout>
+				<Control />
+				<HorizontalLayout name="HorizontalLayout_OpenGL">
+					<Wnd name="Wnd_OpenGLWnd" float="false" />
+				</HorizontalLayout>		
+				<Control />
+			</HorizontalLayout>
+				
+			<HorizontalLayout>
+				
+			</HorizontalLayout>
+		</VerticalLayout>
+	</HorizontalLayout>
+</Window>

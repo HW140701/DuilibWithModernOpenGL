@@ -268,6 +268,7 @@ protected:                                                                \
 #define  DUI_CTR_CONTAINER                       (_T("Container"))
 #define  DUI_CTR_TABLAYOUT                       (_T("TabLayout"))
 #define  DUI_CTR_SCROLLBAR                       (_T("ScrollBar"))
+#define  DUI_CTR_COMBOEDIT                       (_T("ComboEdit")) // added by HuangWang 20200910
 
 #define  DUI_CTR_ICONTAINER                      (_T("IContainer"))
 #define  DUI_CTR_ILISTOWNER                      (_T("IListOwner"))
@@ -289,6 +290,8 @@ protected:                                                                \
 #define  DUI_CTR_LISTLABELELEMENT                (_T("ListLabelElement"))
 
 #define  DUI_CTR_LISTCONTAINERELEMENT            (_T("ListContainerElement"))
+
+
 
 ///
 //////////////END控件名称宏定义//////////////////////////////////////////////////

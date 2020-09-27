@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\WinMain.cpp" />
+    <ClCompile Include="..\src\UI\MainWnd.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\stdafx.h" />
+    <ClInclude Include="..\src\UI\MainWnd.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DuilibExternal\CWndUI.h">
+      <Filter>DuilibExternal</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="UI">
+      <UniqueIdentifier>{7c80376b-3987-4c0b-b1d2-5335493b0db5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DuilibExternal">
+      <UniqueIdentifier>{96d54aef-9273-4992-a6d9-c67cccc8e92b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

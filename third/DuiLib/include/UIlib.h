@@ -68,7 +68,6 @@
 #include <malloc.h>
 #include <stdio.h>
 
-
 #include "Utils/Utils.h"
 #include "Utils/UIDelegate.h"
 #include "Core/UIDefine.h"
@@ -111,3 +110,4 @@
 #include "Control/UIWebBrowser.h"
 #include "Control/UIGifAnim.h"
 //#include "Control/UIFlash.h"
+#include "Control/UIComboEdit.h"
