@@ -1,5 +1,12 @@
 #include "MainWnd.h"
 
+// 按钮
+const TCHAR* const Btn_Min = _T("Btn_Min");
+const TCHAR* const Btn_Max = _T("Btn_Max");
+const TCHAR* const Btn_Close = _T("Btn_Close");
+
+
+// OpenGL窗口
 const TCHAR* const Wnd_OpenGLWnd = _T("Wnd_OpenGLWnd");
 
 // 自定义Wnd
@@ -124,8 +131,32 @@ bool MainWnd::OnTargetSizeChanged(void* param)
 
 void MainWnd::OnClickProcess(TNotifyUI& msg)
 {
-	//if (_tcsicmp(msg.pSender->GetName(), Btn_Close) == 0)
-	//{
-
-	//}
+	if (_tcsicmp(msg.pSender->GetName(), Btn_Close) == 0)
+	{
+		// 然后发送关闭窗口和退出程序消息
+		::SendMessage(this->GetHWND(), WM_CLOSE, NULL, NULL);
+		PostQuitMessage(0);
+	}
+	// 最小化窗口
+	else if (_tcsicmp(msg.pSender->GetName(), Btn_Min) == 0)
+	{
+#if defined(UNDER_CE)
+		::ShowWindow(m_hWnd, SW_MINIMIZE);
+#else
+		SendMessage(WM_SYSCOMMAND, SC_MINIMIZE, 0);
+#endif
+	}
+	// 最大化窗口
+	else if (_tcsicmp(msg.pSender->GetName(), Btn_Max) == 0)
+	{
+#if defined(UNDER_CE)
+		::ShowWindow(m_hWnd, SW_MAXIMIZE);
+		CControlUI* pControl = static_cast<CControlUI*>(m_PaintManager.FindControl(kMaxButtonControlName));
+		if (pControl) pControl->SetVisible(false);
+		pControl = static_cast<CControlUI*>(m_PaintManager.FindControl(kRestoreButtonControlName));
+		if (pControl) pControl->SetVisible(true);
+#else
+		SendMessage(WM_SYSCOMMAND, SC_MAXIMIZE, 0);
+#endif
+	}
 }

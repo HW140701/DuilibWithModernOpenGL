@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <Window size="1080,608" roundcorner="0,0" sizebox="4,4,6,6" caption="0,0,0,90" mininfo="1080,608">
-	<HorizontalLayout >
+	<HorizontalLayout bkcolor="0xFFFFFFFF">
 		<VerticalLayout>
+			<!-- 菜单栏 最大最小输入框 -->
 			<HorizontalLayout>
+				<Control />
+				<HorizontalLayout width="103">
+					<Control width="30" />
+					<Button name="Btn_Min" width="22" height="22" padding="0,10,0,0" normalimage="file='最小化按钮.png'" hotimage="file='最小化按钮悬停.png'"/>
+					<Button name="Btn_Max" width="22" height="22" padding="0,10,0,0" normalimage="file='最大化按钮.png'" hotimage="file='最大化按钮悬停.png'"/>
+					<Button name="Btn_Close" width="22" height="22" padding="0,10,0,0" normalimage="file='关闭按钮.png'" hotimage="file='关闭按钮悬停.png'"/>
+				</HorizontalLayout>
 			</HorizontalLayout>
 				
+			<!-- 绘图区 -->
 			<HorizontalLayout>
 				<Control />
 				<HorizontalLayout name="HorizontalLayout_OpenGL">
@@ -13,6 +22,7 @@
 				<Control />
 			</HorizontalLayout>
 				
+			<!-- 状态栏 -->
 			<HorizontalLayout>
 				
 			</HorizontalLayout>

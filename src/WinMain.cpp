@@ -36,13 +36,15 @@ LRESULT CALLBACK OpenGLWndDisplayProc(HWND hWnd, UINT message, WPARAM wParam, LP
 
 		GetClientRect(hWnd, &rc);
 
-		HBRUSH hbr = ::CreateSolidBrush(RGB(0xFF, 0xFF, 0xFF)); // 白色画刷
+		//HBRUSH hbr = ::CreateSolidBrush(RGB(0xFF, 0xFF, 0xFF)); // 白色画刷
 
 		//HBRUSH hbr = ::CreateSolidBrush(RGB(0x00, 0x00, 0x00)); // 黑色画刷
 
 		//HBRUSH hbr = ::CreateSolidBrush(RGB(0x00, 0xFF, 0x00)); // 红色画刷
 
 		//HBRUSH hbr = (HBRUSH)::GetStockObject(NULL_BRUSH); //透明画刷
+
+		HBRUSH hbr = ::CreateSolidBrush(RGB(0x00, 0xFF, 0x00)); // 绿色画刷
 
 		::FillRect(hDC, &rc, hbr);
 
@@ -111,7 +113,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 	// 第三步：创建窗口类
 	MainWnd mainWnd;
 
-	mainWnd.Create(NULL, _T("千博智能手语双向无障碍交流系统客服端"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
+	mainWnd.Create(NULL, _T("DuilibWithModernOpenGL"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
 
 	mainWnd.CenterWindow();
 	::ShowWindow(mainWnd, SW_SHOW);
