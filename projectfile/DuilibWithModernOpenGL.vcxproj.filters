@@ -5,6 +5,9 @@
     <ClCompile Include="..\src\UI\MainWnd.cpp">
       <Filter>UI</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\OpenGLWnd\OpenGLWnd.cpp">
+      <Filter>OpenGLWnd</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\stdafx.h" />
@@ -14,6 +17,9 @@
     <ClInclude Include="..\src\DuilibExternal\CWndUI.h">
       <Filter>DuilibExternal</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\OpenGLWnd\OpenGLWnd.h">
+      <Filter>OpenGLWnd</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="UI">
@@ -21,6 +27,9 @@
     </Filter>
     <Filter Include="DuilibExternal">
       <UniqueIdentifier>{96d54aef-9273-4992-a6d9-c67cccc8e92b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGLWnd">
+      <UniqueIdentifier>{470b1b17-64da-4ee9-b7e1-20239f86ad76}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

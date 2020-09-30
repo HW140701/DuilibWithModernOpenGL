@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\OpenGLWnd\OpenGLWnd.cpp" />
     <ClCompile Include="..\src\UI\MainWnd.cpp" />
     <ClCompile Include="..\src\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\DuilibExternal\CWndUI.h" />
+    <ClInclude Include="..\src\OpenGLWnd\OpenGLWnd.h" />
     <ClInclude Include="..\src\stdafx.h" />
     <ClInclude Include="..\src\UI\MainWnd.h" />
   </ItemGroup>

@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "UI/MainWnd.h"
-
+#include "OpenGLWnd/OpenGLWnd.h"
 
 
 LRESULT CALLBACK OpenGLWndDisplayProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
@@ -12,6 +12,7 @@ LRESULT CALLBACK OpenGLWndDisplayProc(HWND hWnd, UINT message, WPARAM wParam, LP
 	{
 	case WM_CREATE:
 	{
+
 	}
 
 	break;
