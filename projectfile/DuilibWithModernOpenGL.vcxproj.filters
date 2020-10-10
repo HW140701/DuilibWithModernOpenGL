@@ -8,6 +8,9 @@
     <ClCompile Include="..\src\OpenGLWnd\OpenGLWnd.cpp">
       <Filter>OpenGLWnd</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Dependencies\glad.c">
+      <Filter>Dependencies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\stdafx.h" />
@@ -36,6 +39,9 @@
     </Filter>
     <Filter Include="Utils">
       <UniqueIdentifier>{ed6f4bec-4add-4d2e-a0d4-dc93e3a8bfd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies">
+      <UniqueIdentifier>{a28db0ed-df4b-4e25-9c77-df499cd1e824}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

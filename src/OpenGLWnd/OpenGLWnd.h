@@ -1,6 +1,7 @@
 #ifndef OPENGL_WND_H
 #define OPENGL_WND_H
 
+#include "stdafx.h"
 #include "Utils/Singleton.h"
 #include <memory>
 
@@ -11,10 +12,15 @@ public:
 	OpenGLWnd();
 	virtual~OpenGLWnd();
 
-	static OpenGLWnd::ptr GetSingleton();
+	static OpenGLWnd::ptr GetInstance();
 	
-private:
+public:
+	void OnCreate(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+	void OnDestory(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+	void OnPaint(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
+private:
+	bool CreateOpenGLWindow();
 };
 
 #endif // !OPENGL_WND_H

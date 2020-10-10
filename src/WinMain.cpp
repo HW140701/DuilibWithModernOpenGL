@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "UI/MainWnd.h"
 #include "OpenGLWnd/OpenGLWnd.h"
-
+#include "glad/glad.h"
 
 LRESULT CALLBACK OpenGLWndDisplayProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
@@ -12,46 +12,21 @@ LRESULT CALLBACK OpenGLWndDisplayProc(HWND hWnd, UINT message, WPARAM wParam, LP
 	{
 	case WM_CREATE:
 	{
-
+		OpenGLWnd::GetInstance()->OnCreate(hWnd, message, wParam, lParam);
 	}
 
 	break;
 
 	case WM_DESTROY:
 	{
+		OpenGLWnd::GetInstance()->OnDestory(hWnd, message, wParam, lParam);
 	}
 
-	break;
-
-	case WM_TIMER:
-	{
-
-	}
 	break;
 
 	case WM_PAINT:
 	{
-		HDC hDC = ::GetDC(hWnd);
-
-		RECT rc = { 0 };
-
-		GetClientRect(hWnd, &rc);
-
-		//HBRUSH hbr = ::CreateSolidBrush(RGB(0xFF, 0xFF, 0xFF)); // 白色画刷
-
-		//HBRUSH hbr = ::CreateSolidBrush(RGB(0x00, 0x00, 0x00)); // 黑色画刷
-
-		//HBRUSH hbr = ::CreateSolidBrush(RGB(0x00, 0xFF, 0x00)); // 红色画刷
-
-		//HBRUSH hbr = (HBRUSH)::GetStockObject(NULL_BRUSH); //透明画刷
-
-		HBRUSH hbr = ::CreateSolidBrush(RGB(0x00, 0xFF, 0x00)); // 绿色画刷
-
-		::FillRect(hDC, &rc, hbr);
-
-		::DeleteObject(hbr);
-
-		::ReleaseDC(hWnd, hDC);
+		OpenGLWnd::GetInstance()->OnPaint(hWnd, message, wParam, lParam);
 	}
 
 
@@ -82,6 +57,34 @@ ATOM MyRegisterWnd(TCHAR* szClass, WNDPROC proc)
 	return RegisterClass(&wcls);
 }
 
+
+ATOM MyRegisterOpenGLWnd(TCHAR* szClass, WNDPROC proc)
+{
+	WNDCLASS wcls;
+
+	if (GetClassInfo(GetModuleHandle(NULL), szClass, &wcls))
+	{
+		return 1;// name already registered - ok if it was us  
+	}
+	
+	wcls.style = CS_OWNDC;
+	wcls.lpfnWndProc = proc;
+	wcls.cbClsExtra = 0;
+	wcls.cbWndExtra = 0;
+	wcls.hInstance = GetModuleHandle(NULL);
+	wcls.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+	wcls.hCursor = LoadCursor(NULL, IDC_ARROW);
+	wcls.hbrBackground = NULL;
+	wcls.lpszMenuName = NULL;
+	wcls.lpszClassName = szClass;
+
+
+	ATOM a = RegisterClass(&wcls);
+
+	return a;
+}
+
+
 /* 程序异常崩溃处理回调函数 */
 LONG __stdcall MyUnhandledExceptionFilter(PEXCEPTION_POINTERS pExceptionInfo)
 {
@@ -95,9 +98,8 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 	SetUnhandledExceptionFilter(MyUnhandledExceptionFilter);
 
 	// 注册OpenGL窗口消息处理函数
-	//MyRegisterWnd(_T("OpenGLWnd"), OpenGLWndDisplayProc);
-	MyRegisterWnd((TCHAR*)("OpenGLWnd"), OpenGLWndDisplayProc);
-
+	//MyRegisterWnd((TCHAR*)("OpenGLWnd"), OpenGLWndDisplayProc);
+	MyRegisterOpenGLWnd((TCHAR*)("OpenGLWnd"), OpenGLWndDisplayProc);
 
 	// 第一步： 实例句柄与渲染类关联
 	CPaintManagerUI::SetInstance(hInstance);
@@ -117,6 +119,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCm
 	mainWnd.Create(NULL, _T("DuilibWithModernOpenGL"), UI_WNDSTYLE_FRAME, WS_EX_WINDOWEDGE);
 
 	mainWnd.CenterWindow();
+
 	::ShowWindow(mainWnd, SW_SHOW);
 
 	// 第六步：处理消息循环
