@@ -28,6 +28,7 @@
     <ClInclude Include="..\src\OpenGLWnd\OpenGLWnd.h" />
     <ClInclude Include="..\src\stdafx.h" />
     <ClInclude Include="..\src\UI\MainWnd.h" />
+    <ClInclude Include="..\src\Utils\Singleton.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -4,7 +4,7 @@
 #include "Utils/Singleton.h"
 #include <memory>
 
-class OpenGLWnd : public Singleton<OpenGLWnd>
+class OpenGLWnd
 {
 public:
 	typedef std::shared_ptr<OpenGLWnd> ptr;

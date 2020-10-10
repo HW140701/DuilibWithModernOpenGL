@@ -20,6 +20,9 @@
     <ClInclude Include="..\src\OpenGLWnd\OpenGLWnd.h">
       <Filter>OpenGLWnd</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Utils\Singleton.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="UI">
@@ -30,6 +33,9 @@
     </Filter>
     <Filter Include="OpenGLWnd">
       <UniqueIdentifier>{470b1b17-64da-4ee9-b7e1-20239f86ad76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{ed6f4bec-4add-4d2e-a0d4-dc93e3a8bfd7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
