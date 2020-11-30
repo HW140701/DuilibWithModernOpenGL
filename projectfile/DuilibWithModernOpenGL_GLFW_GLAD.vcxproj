@@ -18,24 +18,11 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\src\Dependencies\glad.c" />
-    <ClCompile Include="..\src\OpenGLWnd\OpenGLWnd.cpp" />
-    <ClCompile Include="..\src\UI\MainWnd.cpp" />
-    <ClCompile Include="..\src\WinMain.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\src\DuilibExternal\CWndUI.h" />
-    <ClInclude Include="..\src\OpenGLWnd\OpenGLWnd.h" />
-    <ClInclude Include="..\src\stdafx.h" />
-    <ClInclude Include="..\src\UI\MainWnd.h" />
-    <ClInclude Include="..\src\Utils\Singleton.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{054274ef-c53f-4fbe-8a7f-032378531cad}</ProjectGuid>
-    <RootNamespace>DuilibWithModernOpenGL</RootNamespace>
+    <ProjectGuid>{082758ea-42a6-493b-8750-25beef822db3}</ProjectGuid>
+    <RootNamespace>DuilibWithModernOpenGLGLFWGLAD</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -85,23 +72,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\.\bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>..\.\intermediatefile\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>..\.\intermediatefile\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\.\bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>..\.\intermediatefile\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>..\.\intermediatefile\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\.\bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>..\.\intermediatefile\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>..\.\intermediatefile\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\.\bin\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>..\.\intermediatefile\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>..\.\intermediatefile\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -109,17 +96,16 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_AFXDLL;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\.\src;..\.\third\DuiLib\include;..\.\third\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\.\src\DuilibWithModernOpenGL_GLFW_GLAD;..\.\third\DuiLib\include;..\.\third\glfw\include;..\.\third\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\.\third\DuiLib\lib\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;DuiLib_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\.\third\DuiLib\lib\$(Platform)\$(Configuration)\;..\.\third\glfw\lib\$(Platform)\lib-vc2019\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glfw3dll.lib;DuiLib_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy /y ..\.\third\Duilib\bin\$(Platform)\$(Configuration)\DuiLib_d.dll ..\.\bin\$(Platform)\$(Configuration)\DuiLib_d.dll
-</Command>
+      <Command>copy /y ..\.\third\Duilib\bin\$(Platform)\$(Configuration)\DuiLib_d.dll ..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\DuiLib_d.dll</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -130,18 +116,18 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_AFXDLL;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\.\src;..\.\third\DuiLib\include;..\.\third\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\.\src\DuilibWithModernOpenGL_GLFW_GLAD;..\.\third\DuiLib\include;..\.\third\glfw\include;..\.\third\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\.\third\DuiLib\lib\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;DuiLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\.\third\DuiLib\lib\$(Platform)\$(Configuration)\;..\.\third\glfw\lib\$(Platform)\lib-vc2019\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glfw3dll.lib;DuiLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy /y ..\.\third\Duilib\bin\$(Platform)\$(Configuration)\DuiLib.dll ..\.\bin\$(Platform)\$(Configuration)\DuiLib.dll</Command>
+      <Command>copy /y ..\.\third\Duilib\bin\$(Platform)\$(Configuration)\DuiLib.dll ..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\DuiLib.dll</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -150,17 +136,16 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_AFXDLL;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\.\src;..\.\third\DuiLib\include;..\.\third\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\.\src\DuilibWithModernOpenGL_GLFW_GLAD;..\.\third\DuiLib\include;..\.\third\glfw\include;..\.\third\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\.\third\DuiLib\lib\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;DuiLib_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\.\third\DuiLib\lib\$(Platform)\$(Configuration)\;..\.\third\glfw\lib\$(Platform)\lib-vc2019\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glfw3dll.lib;DuiLib_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy /y ..\.\third\Duilib\bin\$(Platform)\$(Configuration)\DuiLib_d.dll ..\.\bin\$(Platform)\$(Configuration)\DuiLib_d.dll
-</Command>
+      <Command>copy /y ..\.\third\Duilib\bin\$(Platform)\$(Configuration)\DuiLib_d.dll ..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\DuiLib_d.dll</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -171,20 +156,33 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_AFXDLL;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\.\src;..\.\third\DuiLib\include;..\.\third\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\.\src\DuilibWithModernOpenGL_GLFW_GLAD;..\.\third\DuiLib\include;..\.\third\glfw\include;..\.\third\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\.\third\DuiLib\lib\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;DuiLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\.\third\DuiLib\lib\$(Platform)\$(Configuration)\;..\.\third\glfw\lib\$(Platform)\lib-vc2019\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glfw3dll.lib;DuiLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy /y ..\.\third\Duilib\bin\$(Platform)\$(Configuration)\DuiLib.dll ..\.\bin\$(Platform)\$(Configuration)\DuiLib.dll</Command>
+      <Command>copy /y ..\.\third\Duilib\bin\$(Platform)\$(Configuration)\DuiLib.dll ..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\DuiLib.dll</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\Dependencies\glad.c" />
+    <ClCompile Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\OpenGLWnd\OpenGLWnd.cpp" />
+    <ClCompile Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\UI\MainWnd.cpp" />
+    <ClCompile Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\WinMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\DuilibExternal\CWndUI.h" />
+    <ClInclude Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\GlobalHeader.h" />
+    <ClInclude Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\OpenGLWnd\OpenGLWnd.h" />
+    <ClInclude Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\UI\MainWnd.h" />
+    <ClInclude Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\Utils\Singleton.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

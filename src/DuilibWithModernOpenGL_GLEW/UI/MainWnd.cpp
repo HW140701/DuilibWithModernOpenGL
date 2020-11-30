@@ -33,7 +33,7 @@ DuiLib::CDuiString MainWnd::GetSkinFile()
 
 CDuiString MainWnd::GetSkinFolder()
 {
-	return _T("../../../resource/skin");
+	return _T("../../../../resource/skin");
 }
 
 void MainWnd::Notify(TNotifyUI& msg)

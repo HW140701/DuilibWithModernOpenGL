@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="DuilibExternal">
+      <UniqueIdentifier>{71dcc668-52c8-457a-a32b-cface0f9b513}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGLWnd">
+      <UniqueIdentifier>{6a0a8f22-ea9a-45ac-9d2a-9633e53394da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{19f75255-d509-406e-bdf0-b50b32998452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{1eb4470c-2c6f-402e-8fbf-41d4fd8ffc4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies">
+      <UniqueIdentifier>{bc5fda07-6e03-4bc0-9bc5-ac981126c750}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\Dependencies\glad.c">
+      <Filter>Dependencies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\UI\MainWnd.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\OpenGLWnd\OpenGLWnd.cpp">
+      <Filter>OpenGLWnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\WinMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\DuilibExternal\CWndUI.h">
+      <Filter>DuilibExternal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\Utils\Singleton.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\UI\MainWnd.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\OpenGLWnd\OpenGLWnd.h">
+      <Filter>OpenGLWnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DuilibWithModernOpenGL_GLFW_GLAD\GlobalHeader.h" />
+  </ItemGroup>
+</Project>

@@ -27,6 +27,7 @@ void OpenGLWnd::OnCreate(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	CreateOpenGLWindow(hWnd);
 }
 
+
 void OpenGLWnd::OnDestory(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	glfwSetWindowShouldClose(m_pRenderWrapWindowHandler, true);
@@ -73,7 +74,7 @@ void OpenGLWnd::OnSize(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 bool OpenGLWnd::CreateOpenGLWindow(HWND hWnd)
 {
-	// 得到Duilib下Windows子窗口的大小
+	//// 得到Duilib下Windows子窗口的大小
 	CRect rect;
 	GetClientRect(hWnd, rect);
 	int childWndwidth = rect.Width();
@@ -142,8 +143,6 @@ void OpenGLWnd::LoopRender()
 			glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 
 
-
-
 			// glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 			// -------------------------------------------------------------------------------
 			glfwSwapBuffers(m_pRenderWrapWindowHandler);
@@ -152,3 +151,4 @@ void OpenGLWnd::LoopRender()
 		glfwTerminate();
 	}
 }
+

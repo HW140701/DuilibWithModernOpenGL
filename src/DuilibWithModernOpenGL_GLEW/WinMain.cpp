@@ -1,7 +1,6 @@
 #include "GlobalHeader.h"
 #include "UI/MainWnd.h"
 #include "OpenGLWnd/OpenGLWnd.h"
-#include "glad/glad.h"
 
 LRESULT CALLBACK OpenGLWndDisplayProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
