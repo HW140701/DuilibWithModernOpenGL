@@ -1,7 +1,7 @@
 #ifndef MAINWND_H
 #define MAINWND_H
 
-#include "stdafx.h"
+#include "GlobalHeader.h"
 #include "DuilibExternal/CWndUI.h"
 
 class MainWnd : public WindowImplBase

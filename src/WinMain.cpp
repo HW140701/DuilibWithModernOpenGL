@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "GlobalHeader.h"
 #include "UI/MainWnd.h"
 #include "OpenGLWnd/OpenGLWnd.h"
 #include "glad/glad.h"
@@ -58,30 +58,34 @@ ATOM MyRegisterWnd(TCHAR* szClass, WNDPROC proc)
 }
 
 
-ATOM MyRegisterOpenGLWnd(TCHAR* szClass, WNDPROC proc)
+bool MyRegisterOpenGLWnd(TCHAR* szClass, WNDPROC proc)
 {
-	WNDCLASS wcls;
+	WNDCLASS wndclass;
 
-	if (GetClassInfo(GetModuleHandle(NULL), szClass, &wcls))
+	if (GetClassInfo(GetModuleHandle(NULL), szClass, &wndclass))
 	{
 		return 1;// name already registered - ok if it was us  
 	}
 	
-	wcls.style = CS_OWNDC;
-	wcls.lpfnWndProc = proc;
-	wcls.cbClsExtra = 0;
-	wcls.cbWndExtra = 0;
-	wcls.hInstance = GetModuleHandle(NULL);
-	wcls.hIcon = LoadIcon(NULL, IDI_APPLICATION);
-	wcls.hCursor = LoadCursor(NULL, IDC_ARROW);
-	wcls.hbrBackground = NULL;
-	wcls.lpszMenuName = NULL;
-	wcls.lpszClassName = szClass;
+	wndclass.style = CS_HREDRAW | CS_VREDRAW;
+	wndclass.lpfnWndProc = proc;
+	wndclass.cbClsExtra = 0;
+	wndclass.cbWndExtra = 0;
+	wndclass.hInstance = GetModuleHandle(NULL);
+	wndclass.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+	wndclass.hCursor = LoadCursor(NULL, IDC_ARROW);
+	wndclass.hbrBackground = NULL;
+	wndclass.lpszMenuName = NULL;
+	wndclass.lpszClassName = szClass;
 
+	if (!RegisterClass(&wndclass))
+	{
+		MessageBox(NULL, TEXT("This program requires Windows NT!"), szClass, MB_ICONERROR);
+		return false;
+	}
 
-	ATOM a = RegisterClass(&wcls);
+	return true;
 
-	return a;
 }
 
 

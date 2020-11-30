@@ -1,7 +1,7 @@
 #ifndef OPENGL_WND_H
 #define OPENGL_WND_H
 
-#include "stdafx.h"
+#include "GlobalHeader.h"
 #include "Utils/Singleton.h"
 #include <memory>
 
@@ -20,7 +20,13 @@ public:
 	void OnPaint(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
 private:
-	bool CreateOpenGLWindow();
+	bool CreateOpenGLWindow(HWND hWnd);
+
+	void LoopRender();
+private:
+	bool m_IsDebug;
+	GLFWwindow* m_pRenderWrapWindowHandler;
+	std::shared_ptr<std::thread> m_RenderThreadPtr;
 };
 
 #endif // !OPENGL_WND_H

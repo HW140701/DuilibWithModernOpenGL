@@ -115,7 +115,7 @@ bool MainWnd::OnTargetSizeChanged(void* param)
 
 	CWndUI* pUI = static_cast<CWndUI*>(m_PaintManager.FindControl(_T("Wnd_OpenGLWnd")));
 	if (!pUI)
-		return true;
+		return false;
 
 	// 得到OpenGL窗口的宽高
 	int openGLWndWidth = rc_pos.right - rc_pos.left;
@@ -126,7 +126,7 @@ bool MainWnd::OnTargetSizeChanged(void* param)
 		::MoveWindow(pUI->GetHWND(), rc_pos.left, rc_pos.top, openGLWndWidth, openGLWndHeight, TRUE);
 	}
 
-	return false;
+	return true;
 }
 
 void MainWnd::OnClickProcess(TNotifyUI& msg)
