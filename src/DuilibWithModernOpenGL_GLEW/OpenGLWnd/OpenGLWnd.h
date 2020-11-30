@@ -21,17 +21,10 @@ public:
 	void OnSize(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
 private:
-	bool CreateOpenGLWindow(HWND hWnd);
-
-	void LoopRender();
 
 	bool CreateOpenGLRenderContext_GLEW(HWND hWnd);
 	void OpenGLRender_GLEW(HWND hWnd);
 private:
-	bool m_IsDebug;
-	//GLFWwindow* m_pRenderWrapWindowHandler;
-	std::shared_ptr<std::thread> m_RenderThreadPtr;
-
 	HGLRC m_HGLRC;
 };
 
