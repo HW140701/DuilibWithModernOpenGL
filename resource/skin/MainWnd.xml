@@ -3,7 +3,7 @@
 	<HorizontalLayout bkcolor="0xFFFFFFFF">
 		<VerticalLayout>
 			<!-- 菜单栏 最大最小输入框 -->
-			<HorizontalLayout>
+			<HorizontalLayout height="34">
 				<Control />
 				<HorizontalLayout width="103">
 					<Control width="30" />
@@ -15,15 +15,15 @@
 				
 			<!-- 绘图区 -->
 			<HorizontalLayout>
-				<Control />
+				<Control width="50"/>
 				<HorizontalLayout name="HorizontalLayout_OpenGL">
 					<Wnd name="Wnd_OpenGLWnd" float="false" />
 				</HorizontalLayout>		
-				<Control />
+				<Control width="50"/>
 			</HorizontalLayout>
 				
 			<!-- 状态栏 -->
-			<HorizontalLayout>
+			<HorizontalLayout height="100">
 				
 			</HorizontalLayout>
 		</VerticalLayout>

@@ -119,6 +119,7 @@
     </Link>
     <PostBuildEvent>
       <Command>copy /y ..\.\third\Duilib\bin\$(Platform)\$(Configuration)\DuiLib_d.dll ..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\DuiLib_d.dll
+copy /y ..\.\third\glew\bin\Release\$(Platform)\glew32.dll ..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\glew32.dll
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -141,7 +142,8 @@
       <AdditionalDependencies>opengl32.lib;glfw3.lib;glfw3dll.lib;glew32.lib;glew32s.lib;DuiLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy /y ..\.\third\Duilib\bin\$(Platform)\$(Configuration)\DuiLib.dll ..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\DuiLib.dll</Command>
+      <Command>copy /y ..\.\third\Duilib\bin\$(Platform)\$(Configuration)\DuiLib.dll ..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\DuiLib.dll
+copy /y ..\.\third\glew\bin\Release\$(Platform)\glew32.dll ..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\glew32.dll</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -160,6 +162,7 @@
     </Link>
     <PostBuildEvent>
       <Command>copy /y ..\.\third\Duilib\bin\$(Platform)\$(Configuration)\DuiLib_d.dll ..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\DuiLib_d.dll
+copy /y ..\.\third\glew\bin\Release\$(Platform)\glew32.dll ..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\glew32.dll
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -182,7 +185,8 @@
       <AdditionalDependencies>opengl32.lib;glfw3.lib;glfw3dll.lib;glew32.lib;glew32s.lib;DuiLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy /y ..\.\third\Duilib\bin\$(Platform)\$(Configuration)\DuiLib.dll ..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\DuiLib.dll</Command>
+      <Command>copy /y ..\.\third\Duilib\bin\$(Platform)\$(Configuration)\DuiLib.dll ..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\DuiLib.dll
+copy /y ..\.\third\glew\bin\Release\$(Platform)\glew32.dll ..\.\bin\$(ProjectName)\$(Platform)\$(Configuration)\glew32.dll</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
