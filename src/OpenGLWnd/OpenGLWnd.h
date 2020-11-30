@@ -18,6 +18,7 @@ public:
 	void OnCreate(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 	void OnDestory(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 	void OnPaint(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+	void OnSize(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 
 private:
 	bool CreateOpenGLWindow(HWND hWnd);

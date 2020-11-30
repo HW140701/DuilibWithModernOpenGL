@@ -14,21 +14,25 @@ LRESULT CALLBACK OpenGLWndDisplayProc(HWND hWnd, UINT message, WPARAM wParam, LP
 	{
 		OpenGLWnd::GetInstance()->OnCreate(hWnd, message, wParam, lParam);
 	}
-
 	break;
 
-	case WM_DESTROY:
+	case WM_SIZE:
 	{
-		OpenGLWnd::GetInstance()->OnDestory(hWnd, message, wParam, lParam);
+		OpenGLWnd::GetInstance()->OnSize(hWnd, message, wParam, lParam);
 	}
-
 	break;
 
 	case WM_PAINT:
 	{
 		OpenGLWnd::GetInstance()->OnPaint(hWnd, message, wParam, lParam);
 	}
+	break;
 
+	case WM_DESTROY:
+	{
+		OpenGLWnd::GetInstance()->OnDestory(hWnd, message, wParam, lParam);
+	}
+	break;
 
 	default:
 		return DefWindowProc(hWnd, message, wParam, lParam);

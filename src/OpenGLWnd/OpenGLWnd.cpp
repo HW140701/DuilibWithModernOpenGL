@@ -61,6 +61,16 @@ void OpenGLWnd::OnPaint(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	//::ReleaseDC(hWnd, hDC);
 }
 
+void OpenGLWnd::OnSize(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	int wndHeight = HIWORD(lParam);
+	int wndWidth = LOWORD(lParam);
+
+	glfwSetWindowSize(m_pRenderWrapWindowHandler, wndWidth, wndHeight);
+
+	glViewport(0, 0, wndWidth, wndHeight);
+}
+
 bool OpenGLWnd::CreateOpenGLWindow(HWND hWnd)
 {
 	// 得到Duilib下Windows子窗口的大小
